@@ -1,0 +1,456 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'CNN/sources/main.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:22 . Memory (MB): peak = 185.395 ; gain = 119.164
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:22 . Memory (MB): peak = 185.395 ; gain = 119.164
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:26 . Memory (MB): peak = 185.395 ; gain = 119.164
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'softmax_vec' (CNN/sources/main.cpp:211) automatically.
+INFO: [XFORM 203-602] Inlining function 'flatten_LP2_C2' into 'cnn_top_axi' (CNN/sources/main.cpp:270) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_vec.2' into 'cnn_top_axi' (CNN/sources/main.cpp:274) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_FC2' into 'cnn_top_axi' (CNN/sources/main.cpp:277) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_vec.1' into 'cnn_top_axi' (CNN/sources/main.cpp:278) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_FC3' into 'cnn_top_axi' (CNN/sources/main.cpp:281) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_vec' into 'cnn_top_axi' (CNN/sources/main.cpp:282) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_FC4' into 'cnn_top_axi' (CNN/sources/main.cpp:285) automatically.
+INFO: [XFORM 203-602] Inlining function 'argmax_vec' into 'cnn_top_axi' (CNN/sources/main.cpp:287) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:07 ; elapsed = 00:00:30 . Memory (MB): peak = 185.395 ; gain = 119.164
+WARNING: [XFORM 203-505] Ignore pipeline pragma in Loop whose tripcount is only 1 (CNN/sources/main.cpp:203) in function 'softmax_vec'.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1' (CNN/sources/main.cpp:222) in function 'argmax_vec' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'loop14' (CNN/sources/main.cpp:202) in function 'softmax_vec' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'loop12' (CNN/sources/main.cpp:179) in function 'dense_FC4' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (CNN/sources/main.cpp:132) in function 'dense_FC1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (CNN/sources/main.cpp:222) in function 'argmax_vec' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'loop14' (CNN/sources/main.cpp:202) in function 'softmax_vec' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (CNN/sources/main.cpp:183) in function 'dense_FC4' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (CNN/sources/main.cpp:126) in function 'dense_FC1' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (CNN/sources/main.cpp:134) in function 'dense_FC1' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (CNN/sources/main.cpp:141) in function 'dense_FC1' completely with a factor of 32.
+INFO: [XFORM 203-102] Partitioning array 'fc4_w' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv1_w' in dimension 3 automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_w.0' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_w.1' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_w.2' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_w.3' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_w.4' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_w.5' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_w.6' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_w.7' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc4_b' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'logits' (CNN/sources/main.cpp:250) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'probs' (CNN/sources/main.cpp:251) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'f1' (CNN/sources/main.cpp:244) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc1_w'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc1_b'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'acc' (CNN/sources/main.cpp:122) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_w.0' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_w.1' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_w.2' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_w.3' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_w.4' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_w.5' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_w.6' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_w.7' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc4_b' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'logits' (CNN/sources/main.cpp:250) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'probs' (CNN/sources/main.cpp:251) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'softmax_vec' (CNN/sources/main.cpp:211) automatically.
+INFO: [XFORM 203-602] Inlining function 'flatten_LP2_C2' into 'cnn_top_axi' (CNN/sources/main.cpp:270) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_vec.2' into 'cnn_top_axi' (CNN/sources/main.cpp:274) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_FC2' into 'cnn_top_axi' (CNN/sources/main.cpp:277) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_vec.1' into 'cnn_top_axi' (CNN/sources/main.cpp:278) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_FC3' into 'cnn_top_axi' (CNN/sources/main.cpp:281) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_vec' into 'cnn_top_axi' (CNN/sources/main.cpp:282) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_FC4' into 'cnn_top_axi' (CNN/sources/main.cpp:285) automatically.
+INFO: [XFORM 203-602] Inlining function 'softmax_vec' into 'cnn_top_axi' (CNN/sources/main.cpp:286) automatically.
+INFO: [XFORM 203-602] Inlining function 'argmax_vec' into 'cnn_top_axi' (CNN/sources/main.cpp:287) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (CNN/sources/main.cpp:88:39) to (CNN/sources/main.cpp:88:33) in function 'maxpool_L2_C2'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (CNN/sources/main.cpp:41:38) to (CNN/sources/main.cpp:41:32) in function 'maxpool_L1_C1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (CNN/sources/main.cpp:15:42) to (CNN/sources/main.cpp:15:36) in function 'conv1d_same_1in'... converting 3 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'relu_L1_C1' into 'cnn_top_axi' (CNN/sources/main.cpp:261) automatically.
+INFO: [XFORM 203-602] Inlining function 'maxpool_L1_C1' into 'cnn_top_axi' (CNN/sources/main.cpp:262) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_L2_C2' into 'cnn_top_axi' (CNN/sources/main.cpp:266) automatically.
+INFO: [XFORM 203-602] Inlining function 'maxpool_L2_C2' into 'cnn_top_axi' (CNN/sources/main.cpp:267) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:00:35 . Memory (MB): peak = 185.395 ; gain = 119.164
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1.1' (CNN/sources/main.cpp:60:27) in function 'conv2_same_fixed' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (CNN/sources/main.cpp:58:23) in function 'conv2_same_fixed' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+INFO: [XFORM 203-541] Flattening a loop nest 'loop5' (CNN/sources/main.cpp:56:45) in function 'conv2_same_fixed'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (CNN/sources/main.cpp:13:23) in function 'conv1d_same_1in' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'loop2' (CNN/sources/main.cpp:11:42) in function 'conv1d_same_1in'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (CNN/sources/main.cpp:28:24) in function 'cnn_top_axi'.
+INFO: [XFORM 203-541] Flattening a loop nest 'loop4' (CNN/sources/main.cpp:37:45) in function 'cnn_top_axi'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-4' (CNN/sources/main.cpp:76:24) in function 'cnn_top_axi'.
+INFO: [XFORM 203-541] Flattening a loop nest 'loop7' (CNN/sources/main.cpp:85:49) in function 'cnn_top_axi'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-6' (CNN/sources/main.cpp:100:25) in function 'cnn_top_axi'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'loop10' (CNN/sources/main.cpp:149:42) in function 'cnn_top_axi' : 
+
+the outer loop is not a perfect loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'loop11' (CNN/sources/main.cpp:164:41) in function 'cnn_top_axi' : 
+
+the outer loop is not a perfect loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:15 ; elapsed = 00:00:40 . Memory (MB): peak = 198.238 ; gain = 132.008
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cnn_top_axi' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv1d_same_1in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop2_L.1'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:19) and 'fadd' operation ('acc', CNN/sources/main.cpp:19).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:19) and 'fadd' operation ('acc', CNN/sources/main.cpp:19).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:19) and 'fadd' operation ('acc', CNN/sources/main.cpp:19).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:19) and 'fadd' operation ('acc', CNN/sources/main.cpp:19).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 40.665 seconds; current allocated memory: 144.606 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.149 seconds; current allocated memory: 144.866 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2_same_fixed' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop5_L.1.1'.
+WARNING: [SCHED 204-68] The II Violation in module 'conv2_same_fixed' (Loop: loop5_L.1.1): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:65) and 'phi' operation ('acc') with incoming values : ('acc', CNN/sources/main.cpp:59) ('acc', CNN/sources/main.cpp:65).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:65) and 'fadd' operation ('acc', CNN/sources/main.cpp:65).
+WARNING: [SCHED 204-68] The II Violation in module 'conv2_same_fixed' (Loop: loop5_L.1.1): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:65) and 'phi' operation ('acc') with incoming values : ('acc', CNN/sources/main.cpp:59) ('acc', CNN/sources/main.cpp:65).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:65) and 'fadd' operation ('acc', CNN/sources/main.cpp:65).
+WARNING: [SCHED 204-68] The II Violation in module 'conv2_same_fixed' (Loop: loop5_L.1.1): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:65) and 'phi' operation ('acc') with incoming values : ('acc', CNN/sources/main.cpp:59) ('acc', CNN/sources/main.cpp:65).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:65) and 'fadd' operation ('acc', CNN/sources/main.cpp:65).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:65) and 'fadd' operation ('acc', CNN/sources/main.cpp:65).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 11.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.49 seconds; current allocated memory: 145.133 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.212 seconds; current allocated memory: 145.433 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_FC1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('tmp_8_30', CNN/sources/main.cpp:136) and 'fadd' operation ('tmp_8_30', CNN/sources/main.cpp:136).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('tmp_8_30', CNN/sources/main.cpp:136) and 'fadd' operation ('tmp_8_30', CNN/sources/main.cpp:136).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('tmp_8_30', CNN/sources/main.cpp:136) and 'fadd' operation ('tmp_8_30', CNN/sources/main.cpp:136).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('tmp_8_30', CNN/sources/main.cpp:136) and 'fadd' operation ('tmp_8_30', CNN/sources/main.cpp:136).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 15.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.85 seconds; current allocated memory: 146.114 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.364 seconds; current allocated memory: 147.404 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn_top_axi' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_loop3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-61] Pipelining loop 'loop4_L'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('r1_load', CNN/sources/main.cpp:45->CNN/sources/main.cpp:262) on array 'x', CNN/sources/main.cpp:236 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'r1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 5.
+INFO: [SCHED 204-61] Pipelining loop 'L_loop6'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-61] Pipelining loop 'loop7_L'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('r2_load', CNN/sources/main.cpp:92->CNN/sources/main.cpp:267) on array 'x', CNN/sources/main.cpp:240 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'r2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 6.
+INFO: [SCHED 204-61] Pipelining loop 'L_loop8'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'loop13'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'loop10.1'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:156->CNN/sources/main.cpp:277) and 'fadd' operation ('acc', CNN/sources/main.cpp:156->CNN/sources/main.cpp:277).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:156->CNN/sources/main.cpp:277) and 'fadd' operation ('acc', CNN/sources/main.cpp:156->CNN/sources/main.cpp:277).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:156->CNN/sources/main.cpp:277) and 'fadd' operation ('acc', CNN/sources/main.cpp:156->CNN/sources/main.cpp:277).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:156->CNN/sources/main.cpp:277) and 'fadd' operation ('acc', CNN/sources/main.cpp:156->CNN/sources/main.cpp:277).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'loop13'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'loop11.1'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:171->CNN/sources/main.cpp:281) and 'fadd' operation ('acc', CNN/sources/main.cpp:171->CNN/sources/main.cpp:281).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:171->CNN/sources/main.cpp:281) and 'fadd' operation ('acc', CNN/sources/main.cpp:171->CNN/sources/main.cpp:281).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:171->CNN/sources/main.cpp:281) and 'fadd' operation ('acc', CNN/sources/main.cpp:171->CNN/sources/main.cpp:281).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('acc', CNN/sources/main.cpp:171->CNN/sources/main.cpp:281) and 'fadd' operation ('acc', CNN/sources/main.cpp:171->CNN/sources/main.cpp:281).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'loop13'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'loop12'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 44.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 13'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('s', CNN/sources/main.cpp:211->CNN/sources/main.cpp:286) and 'fadd' operation ('s', CNN/sources/main.cpp:211->CNN/sources/main.cpp:286).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('s', CNN/sources/main.cpp:211->CNN/sources/main.cpp:286) and 'fadd' operation ('s', CNN/sources/main.cpp:211->CNN/sources/main.cpp:286).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('s', CNN/sources/main.cpp:211->CNN/sources/main.cpp:286) and 'fadd' operation ('s', CNN/sources/main.cpp:211->CNN/sources/main.cpp:286).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('s', CNN/sources/main.cpp:211->CNN/sources/main.cpp:286) and 'fadd' operation ('s', CNN/sources/main.cpp:211->CNN/sources/main.cpp:286).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 19.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 14'.
+WARNING: [SCHED 204-68] The II Violation in module 'cnn_top_axi' (Loop: Loop 14): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'fmul' operation ('tmp_4_i1', CNN/sources/main.cpp:217->CNN/sources/main.cpp:286) and 'select' operation ('select_ln217', CNN/sources/main.cpp:217->CNN/sources/main.cpp:286).
+WARNING: [SCHED 204-68] The II Violation in module 'cnn_top_axi' (Loop: Loop 14): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fmul' operation ('tmp_4_i1', CNN/sources/main.cpp:217->CNN/sources/main.cpp:286) and 'select' operation ('select_ln217', CNN/sources/main.cpp:217->CNN/sources/main.cpp:286).
+WARNING: [SCHED 204-68] The II Violation in module 'cnn_top_axi' (Loop: Loop 14): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'fmul' operation ('tmp_4_i1', CNN/sources/main.cpp:217->CNN/sources/main.cpp:286) and 'select' operation ('select_ln217', CNN/sources/main.cpp:217->CNN/sources/main.cpp:286).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.737 seconds; current allocated memory: 149.136 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.947 seconds; current allocated memory: 151.861 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv1d_same_1in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv1d_same_1in_conv1_w_0' to 'conv1d_same_1in_cbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv1d_same_1in_conv1_b' to 'conv1d_same_1in_ccud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_top_axi_fadd_32ns_32ns_32_5_full_dsp_1' to 'cnn_top_axi_fadd_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_top_axi_fmul_32ns_32ns_32_4_max_dsp_1' to 'cnn_top_axi_fmul_eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fadd_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fmul_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv1d_same_1in'.
+INFO: [HLS 200-111]  Elapsed time: 0.889 seconds; current allocated memory: 152.685 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2_same_fixed' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv2_same_fixed_conv2_w' to 'conv2_same_fixed_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv2_same_fixed_conv2_b' to 'conv2_same_fixed_g8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fadd_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fmul_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2_same_fixed'.
+INFO: [HLS 200-111]  Elapsed time: 0.384 seconds; current allocated memory: 153.411 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_FC1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fadd_dEe': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fmul_eOg': 7 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_FC1'.
+INFO: [HLS 200-111]  Elapsed time: 0.878 seconds; current allocated memory: 157.564 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn_top_axi' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn_top_axi/s_in_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn_top_axi/s_in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn_top_axi/s_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn_top_axi/s_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'cnn_top_axi' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'cnn_top_axi_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'cnn_top_axi_faddfhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_top_axi_fdiv_32ns_32ns_32_16_1' to 'cnn_top_axi_fdiv_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_top_axi_sitofp_32ns_32_6_1' to 'cnn_top_axi_sitofjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_top_axi_fcmp_32ns_32ns_1_2_1' to 'cnn_top_axi_fcmp_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_top_axi_fexp_32ns_32ns_32_9_full_dsp_1' to 'cnn_top_axi_fexp_lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cnn_top_axi_mux_325_32_1_1' to 'cnn_top_axi_mux_3mb6' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fadd_dEe': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_faddfhbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fcmp_kbM': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fdiv_ibs': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fexp_lbW': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_fmul_eOg': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_mux_3mb6': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cnn_top_axi_sitofjbC': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn_top_axi'.
+INFO: [HLS 200-111]  Elapsed time: 1.586 seconds; current allocated memory: 165.042 MB.
+INFO: [RTMG 210-279] Implementing memory 'conv1d_same_1in_cbkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv1d_same_1in_ccud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv2_same_fixed_fYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv2_same_fixed_g8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_1_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_2_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_3_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_5_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_7_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_8_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_9_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_10_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_11_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_12_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_13_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_14_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_15_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_16_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_17_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_18_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_19_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_20_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_21_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_22_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_23_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_24_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_25_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_26_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_27_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_28_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_29_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_30_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dense_FC1_fc1_w_31_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_top_axi_fc2_b_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_top_axi_fc2_w_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_top_axi_fc3_b_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_top_axi_fc3_w_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_x0_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_c1_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_r1_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_p1_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_c2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_r2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_p2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_a1_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_f2_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_f3_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_top_axi_a3_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:22 ; elapsed = 00:01:03 . Memory (MB): peak = 250.723 ; gain = 184.492
+INFO: [VHDL 208-304] Generating VHDL RTL for cnn_top_axi.
+INFO: [VLOG 209-307] Generating Verilog RTL for cnn_top_axi.
+INFO: [HLS 200-112] Total elapsed time: 62.863 seconds; peak allocated memory: 165.042 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+ERROR: [IMPL 213-28] Failed to generate IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+ERROR: [IMPL 213-28] Failed to generate IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+ERROR: [IMPL 213-28] Failed to generate IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
