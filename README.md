@@ -37,13 +37,16 @@ The design converts a trained CNN into a fully synthesizable hardware IP, suppor
 
 ```
 ├── cnn_sdk/              # PS-side ARM application (DMA config + inference)
+├── model/                # Trained CNN (weights, parameters, preprocessing)
 ├── report/               # Full project report (architecture, analysis, tables)
-├── sources/              # Vitis HLS hardware source (.cpp / .h)
+├── sources/              # Vitis HLS hardware sources (.cpp / .h)
 ├── testbench/            # HLS C-simulation testbench
 │
+├── Project Report_ Hardware Impleme...   # Original PDF report uploaded
 ├── solution6.log         # HLS solution build log
 ├── vivado_hls.log        # Vivado HLS synthesis log
 └── README.md             # Project documentation
+
 ```
 
 ---
